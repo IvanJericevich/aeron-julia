@@ -25,6 +25,10 @@ cd <path to cloned repository>
 ```cmake
 cmake .
 ```
+If A CMake build error occurs for not being able  to find the Boost dependency, install Boost with
+```bash
+brew install Boost
+```
 
 ## Usage
 

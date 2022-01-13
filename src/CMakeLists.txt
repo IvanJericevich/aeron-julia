@@ -24,7 +24,8 @@ foreach(module_file ${modules_SRC})
     add_dependencies(${name_without_extension}
             fmt
             aeron
-            aeron-archive-client)
+            aeron-archive-client
+            jlcxx)
         
     list(APPEND modules ${name_without_extension})
 endforeach()
