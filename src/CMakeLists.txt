@@ -1,4 +1,5 @@
 include_directories(${FMT_INCLUDE_DIRS})
+include_directories(${JLCXX_INCLUDE_DIRS})
 include_directories(${AERON_INCLUDE_DIRS})
 include_directories(${AERON_ARCHIVE_CLIENT_INCLUDE_DIRS})
 
@@ -15,6 +16,7 @@ foreach(module_file ${modules_SRC})
             ${SYSCALL_INTERCEPT_LIBRARIES}
             ${CMAKE_THREAD_LIBS_INIT}
             ${RT_LIBRARY}
+            ${JLCXX_LIBRARIES}
             ${FMT_LIBRARIES}
             ${AERON_LIBRARIES}
             ${AERON_ARCHIVE_CLIENT_LIBRARIES})

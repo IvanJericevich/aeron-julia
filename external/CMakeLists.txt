@@ -1,4 +1,26 @@
 # jlcxx
+ExternalProject_Add(jlcxx
+        SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/jlcxx
+        CMAKE_ARGS
+        -DCMAKE_BUILD_TYPE=Release
+        -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+        -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
+        -DCMAKE_MAKE_PROGRAM=${CMAKE_MAKE_PROGRAM}
+        -DCMAKE_GENERATOR=${CMAKE_GENERATOR}
+        -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
+        -DCMAKE_EXE_LINKER_FLAGS=${CMAKE_EXE_LINKER_FLAGS}
+        -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+        BUILD_COMMAND ${CMAKE_COMMAND} --build . --target fmt
+        INSTALL_COMMAND ""
+        BUILD_BYPRODUCTS
+        "${CMAKE_CURRENT_BINARY_DIR}/jlcxx-prefix/src/jlcxx-build/libjlcxx.a")
+
+ExternalProject_Get_Property(jlcxx SOURCE_DIR)
+set(JLCXX_INCLUDE_DIRS ${SOURCE_DIR}/include PARENT_SCOPE)
+
+ExternalProject_Get_Property(jlcxx BINARY_DIR)
+message(STATUS ${BINARY_DIR})
+set(JLCXX_LIBRARIES ${BINARY_DIR}/libjlcxx.a PARENT_SCOPE)
 
 # fmt
 ExternalProject_Add(fmt

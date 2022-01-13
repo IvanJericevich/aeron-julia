@@ -7,3 +7,6 @@
 [submodule "external/fmt"]
 	path = external/fmt
 	url = https://github.com/fmtlib/fmt.git
+[submodule "external/jlcxx"]
+	path = external/jlcxx
+	url = https://github.com/JuliaInterop/libcxxwrap-julia
