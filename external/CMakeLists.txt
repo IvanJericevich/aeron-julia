@@ -11,7 +11,7 @@ ExternalProject_Add(jlcxx
         -DCMAKE_EXE_LINKER_FLAGS=${CMAKE_EXE_LINKER_FLAGS}
         -DCMAKE_POSITION_INDEPENDENT_CODE=ON
         -DBOOST_ROOT=${BOOST_ROOT}
-        BUILD_COMMAND ${CMAKE_COMMAND} --build . --target fmt
+        BUILD_COMMAND ${CMAKE_COMMAND} --build . --target jlcxx
         INSTALL_COMMAND ""
         BUILD_BYPRODUCTS
         "${CMAKE_CURRENT_BINARY_DIR}/jlcxx-prefix/src/jlcxx-build/libjlcxx.a")

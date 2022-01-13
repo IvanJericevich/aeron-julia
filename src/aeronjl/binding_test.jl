@@ -1,7 +1,7 @@
 # Wrap the functions defined in C++
 module CppHello
   using CxxWrap
-  @wrapmodule CxxWrap.CxxWrapCore.libhello()
+  @wrapmodule(joinpath("build", "binding_test"))
 
   function __init__()
     @initcxx
